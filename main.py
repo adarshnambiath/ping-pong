@@ -3,6 +3,8 @@ from game.game_engine import GameEngine
 
 # Initialize pygame/Start application
 pygame.init()
+pygame.mixer.init()
+
 
 # Screen dimensions
 WIDTH, HEIGHT = 800, 600
@@ -29,7 +31,7 @@ def main():
                 running = False
 
         engine.handle_input()
-        engine.update()
+        engine.update(SCREEN)
         engine.render(SCREEN)
 
         pygame.display.flip()
